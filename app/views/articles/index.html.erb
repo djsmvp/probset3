@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta http-equiv="refresh" content="8">
+  </head>
+  <body>
+    <h1>Users Chat</h1>
+    <br />
+    <% if current_user %>
+      <h3><%= session[:email] %>, you are user: <%= session[:user_id] %></h3>
+      <br />
+      <div id="articles">
+        <%= render @articles %>
+      </div>
+      <br />
+      <%= render 'form' %>
+    <% else %>
+      You must be logged in to view the chat.
+    <% end %>
+
+
+  </body>
+</html>
